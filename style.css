@@ -1,0 +1,180 @@
+/* Hauptregeln CSS */
+
+body {
+    background-image: url(./img/mynotes_background.jpg);
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 100px);
+    margin: 0;
+    padding: 50px;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 28px;
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+
+/* Notizeingabefeld Sektion CSS */
+
+.note-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 350px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.inputfield-title {
+    padding: 12px 12px 6px 20px;
+    border: none;
+    outline: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+.inputfield-note {
+    padding: 12px 6px 6px 20px;
+    border: none;
+    outline: none;
+    height: 200px;
+    width: 300px;
+    max-width: 300px;
+    font-family: 'Courier New', Courier, monospace;
+    }
+
+.note-button {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 12px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Notizspeicherung CSS */
+
+.blocknotes {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    }
+
+.mynote {
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+    width: 310px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    white-space: pre-line;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.mynote p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.notefield {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 200px;
+    height: 100px;
+    padding: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 50px;
+}
+
+.delete-button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Papierkorb für die gelöschten Notizen */
+
+.paperwaste-button {
+    background-color: white;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+    border-width: 0;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.paperwaste-button:hover {
+    transition: 816ms;
+    transform: scale(1.05);
+}
+
+.paperwaste-button a {
+    text-decoration: none;
+    color: black;
+}
+
+.paperwaste-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.d-none {
+    display: none;
+}
+
+/* Responsive bis 320px */
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    body {
+        padding-left: 20px; 
+    }
+
+    .positioncenter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 400px) {
+    .note-section {
+        width: 300px; }
+
+    .inputfield-note {
+        width: 250px;
+        max-width: 250px;
+    }
+
+    .mynote {
+        width: 260px;
+    }
+}
+
+@media (max-width: 350px) {
+    .note-section {
+        width: 250px; }
+
+    .inputfield-note {
+        width: 200px;
+        max-width: 200px;
+    }
+
+    .mynote {
+        width: 210px;
+    }
+}

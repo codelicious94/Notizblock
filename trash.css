@@ -1,0 +1,86 @@
+body {
+    background-image: url(./img/mynotes_background.jpg);
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 100px);
+    margin: 0;
+    padding: 50px;
+}
+
+.title {
+    background-color: white;
+    text-align: center;
+    width: 350px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.paperwaste {
+    width: 50px;
+    height: 50px;
+}
+
+.back-icon {
+    height: 35px;
+    width: 35px;
+    background-color: red;
+    position: absolute;
+    border-radius: 10px 0 0 0;
+    cursor: pointer;
+}
+
+.mytrash {
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+    width: 350px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    white-space: pre-line;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.mytrash button {
+    margin-bottom: 12px;
+}
+
+@media (max-width: 500px) {
+    body {
+        padding-left: 10px;
+    }
+
+    .mytrash {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .title {
+        width: 250px;
+    }
+
+    .title h1 {
+        font-size: 24px;
+    }
+
+    .mytrash {
+        width: 250px;
+    }
+}
+
+@media (max-width: 350px) {
+    .title {
+        width: 200px;
+    }
+
+    .title h1 {
+        font-size: 20px;
+    }
+
+    .mytrash {
+        width: 200px;
+    }
+}
