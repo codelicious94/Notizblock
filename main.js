@@ -1,5 +1,3 @@
-// Variablen & Arrays:
-
 let titles = [];
 let notes = [];
 
@@ -9,18 +7,16 @@ let trashNote = [];
 load();
 loadTrash();
 
-// render Funktionen:
-
 function render() {
     let content = document.getElementById('content');
     content.innerHTML = '';
-    content.innerHTML += `
-    <div class="positioncenter">
-        <div class="note-section">
+    content.innerHTML += /*HTML*/ `
+    <div class="positionCenter">
+        <div class="noteSection">
             <div><h1>Meine Notizen:</h1></div>
-            <input id="title" class="inputfield-title" type="text" placeholder="Titel">
-            <textarea id="note" class="inputfield-note" type="text" placeholder="Notiz schreiben..."></textarea>
-            <button class="note-button" onclick="addNote()">Notiz speichern</button>
+            <input id="title" class="inputfieldTitle" type="text" placeholder="Titel">
+            <textarea id="note" class="inputfieldNote" type="text" placeholder="Notiz schreiben..."></textarea>
+            <button class="noteButton" onclick="addNote()">Notiz speichern</button>
         </div>
     </div>`
 
@@ -28,11 +24,11 @@ function render() {
         const title = titles[i];
         const note = notes[i];
 
-        content.innerHTML += /*html*/ `
-            <div class="mynote">
+        content.innerHTML += /*HTML*/ `
+            <div class="myNote">
                 <b><span>Titel: </span></b><p>${titles[i]}</p>
                 <b><span>Notiz: </span></b><p>${notes[i]}</p>
-                <button class="delete-button" onclick="deleteNote(${i})">Notiz löschen</button>
+                <button class="deleteButton" onclick="deleteNote(${i})">Notiz löschen</button>
             </div>`;
     }
 }
@@ -43,7 +39,7 @@ function renderTrash() {
 
     for (let i = 0; i < trashTitle.length && i < trashNote.length; i++) {
         trashContainer.innerHTML += /*HTML*/ `
-            <div class="mytrash">
+            <div class="myTrash">
                 <b><span>Titel: </span></b><p>${trashTitle[i]}</p>
                 <b><span>Notiz: </span></b><p>${trashNote[i]}</p>
                 <button onclick="restoreNote(${i})">Notiz wiederherstellen</button>
@@ -52,8 +48,6 @@ function renderTrash() {
     }
 }
     
-// Notiz & Trash hinzufügen:
-
 function addNote() {
     let title = document.getElementById('title').value;
     let note = document.getElementById('note').value;
@@ -78,7 +72,7 @@ function waste(i) {
     let trashContainer = document.getElementById('DeletedNote')
     
     document.getElementById('DeletedNote').innerHTML += /*HTML*/ `  
-        <div class="mytrash">
+        <div class="myTrash">
             <p>${trashTitle[i]}</p>
             <p>${trashNote[i]}</p>
         <div>
@@ -89,8 +83,6 @@ function waste(i) {
     </div> 
     `;
   }
-
-// Notiz & Trash löschen:
 
 function deleteNote(i) {
     trashTitle.push(titles[i]);
@@ -121,11 +113,9 @@ function fullDelete(i) {
 
         renderTrash();
     } else {
-        console.error("Ungültiger Index für die vollständige Löschung der Notiz.");
+        console.error("Ungültige Notiz.");
     }
 }
-
-// Notiz & Trash Variablen speichern im localStorage:
 
 function save() {
     let titleAsText = JSON.stringify(titles);
@@ -142,8 +132,6 @@ function saveTrash(){
     localStorage.setItem('trashTitle', trashTitleAsText);
     localStorage.setItem('trashNote', trashNoteAsText);
 }
-
-// Notiz & Trash Variablen laden:
 
 function load() {
     let titleAsText = localStorage.getItem('titles');
@@ -163,8 +151,6 @@ function loadTrash(){
         trashNote = JSON.parse(trashNoteAsText);
    }
 }
-
-// gelöschte Trash Notizen wiederherstellen:
 
 function restoreNote(i) {
     let restoredTitle = trashTitle.splice(i, 1)[0];
